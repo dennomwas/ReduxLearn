@@ -1,17 +1,12 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const styles = {
-  fontFamily: 'sans-serif',
-  textAlign: 'center',
-};
+import store from "./store/index";
+import addArticle from "./actions/index";
 
-const App = () => (
-  <div style={styles}>
-    <Hello name="CodeSandbox" />
-    <h2>Start editing to see some magic happen {'\u2728'}</h2>
-  </div>
-);
+import App from "./components/App";
 
-render(<App />, document.getElementById('root'));
+window.store = store;
+window.addArticle = addArticle;
+
+ReactDOM.render(<App />, document.getElementById("root"));
